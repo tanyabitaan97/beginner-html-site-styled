@@ -5,7 +5,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')   // Jenkins credential ID (username + password/token)
-        DOCKERHUB_USER        = "${DOCKERHUB_CREDENTIALS_USR}"
+        DOCKERHUB_USER        = "tanyabitaan97"
         IMAGE_NAME            = "beginner-html-site"
         IMAGE_TAG              = "${env.BUILD_NUMBER}"
         FULL_IMAGE             = "${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
