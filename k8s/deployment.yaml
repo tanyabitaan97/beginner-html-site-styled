@@ -17,7 +17,7 @@ spec:
       containers:
         - name: beginner-html-site
           # Replaced by the Jenkinsfile with DOCKERHUB_USER/beginner-html-site:<build-number>
-          image: DOCKERHUB_USER/beginner-html-site:latest
+          image: tanyabitaan/beginner-html-site:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
