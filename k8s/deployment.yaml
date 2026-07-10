@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: beginner-html-site
+  labels:
+    app: beginner-html-site
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: beginner-html-site
+  template:
+    metadata:
+      labels:
+        app: beginner-html-site
+    spec:
+      containers:
+        - name: beginner-html-site
+          # Replaced by the Jenkinsfile with DOCKERHUB_USER/beginner-html-site:<build-number>
+          image: DOCKERHUB_USER/beginner-html-site:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "200m"
+              memory: "128Mi"
